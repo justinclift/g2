@@ -30,29 +30,9 @@
 /***********************************************************************/
 
 // ***> NOTE: The init message must be a single line with no CRs or LFs
-#define INIT_MESSAGE "Initializing configs to Pendulum v2"
+#define INIT_MESSAGE "Initializing config to Justin v1.1"
 
 //**** GLOBAL / GENERAL SETTINGS ******************************************************
-
-// Machine configuration settings
-
-#define KINEMATICS KINE_FOUR_CABLE
-
-#define JUNCTION_INTEGRATION_TIME   1.2                    // cornering - between 0.10 and 2.00 (higher is faster)
-#define CHORDAL_TOLERANCE           0.01                    // chordal tolerance for arcs (in mm)
-
-#define SOFT_LIMIT_ENABLE           0                       // 0=off, 1=on
-#define HARD_LIMIT_ENABLE           0                       // 0=off, 1=on
-#define SAFETY_INTERLOCK_ENABLE     1                       // 0=off, 1=on
-
-#define SPINDLE_ENABLE_POLARITY     1                       // 0=active low, 1=active high
-#define SPINDLE_DIR_POLARITY        0                       // 0=clockwise is low, 1=clockwise is high
-#define SPINDLE_PAUSE_ON_HOLD       true
-#define SPINDLE_DWELL_TIME          1.0
-
-#define COOLANT_MIST_POLARITY       1                       // 0=active low, 1=active high
-#define COOLANT_FLOOD_POLARITY      1                       // 0=active low, 1=active high
-#define COOLANT_PAUSE_ON_HOLD       false
 
 // Communications and reporting settings
 
@@ -70,7 +50,7 @@
 #define STATUS_REPORT_INTERVAL_MS   250                     // milliseconds - set $SV=0 to disable
 
 //#define STATUS_REPORT_DEFAULTS "line","posx","posy","posz","posa","feed","vel","unit","coor","dist","admo","frmo","momo","stat"
-#define STATUS_REPORT_DEFAULTS "line","posx","posy","posz","feed","vel","momo","stat","ain1vv","ain2vv","ain3vv","ain4vv","knpa","knpb","knpc","knpd"
+//#define STATUS_REPORT_DEFAULTS "line","posx","posy","posz","feed","vel","momo","stat","ain1vv","ain2vv","ain3vv","ain4vv","knpa","knpb","knpc","knpd"
 
 //{sr:{"line":t,"posx":t,"posy":t,"posz":t,"feed":t,"vel":t,"momo":t,"stat":t,"ain1vv":t,"_ps1":t,"_ps2":t,"_ps3":t,"_ps4":t}}
 
@@ -78,75 +58,49 @@
 //#define STATUS_REPORT_DEFAULTS "line","vel","mpox","mpoy","mpoz","mpoa","coor","ofsa","ofsx","ofsy","ofsz","dist","unit","stat","homz","homy","homx","momo"
 //#define STATUS_REPORT_DEFAULTS "_ts1","_cs1","_es1","_xs1","_fe1","line","posx","posy","posz","vel","stat"
 
-// Gcode startup defaults
-#define GCODE_DEFAULT_UNITS         MILLIMETERS             // MILLIMETERS or INCHES
-#define GCODE_DEFAULT_PLANE         CANON_PLANE_XY          // CANON_PLANE_XY, CANON_PLANE_XZ, or CANON_PLANE_YZ
-#define GCODE_DEFAULT_COORD_SYSTEM  G54                     // G54, G55, G56, G57, G58 or G59
-#define GCODE_DEFAULT_PATH_CONTROL  PATH_CONTINUOUS
-#define GCODE_DEFAULT_DISTANCE_MODE ABSOLUTE_DISTANCE_MODE
-
-// These refer to the AINx, not the AIx
-#define LOAD_CELL_A_INPUT 1
-#define LOAD_CELL_B_INPUT 2
-#define LOAD_CELL_C_INPUT 3
-#define LOAD_CELL_D_INPUT 4
-
-#define ANCHOR_A_INPUT 1
-#define ANCHOR_B_INPUT 2
-#define ANCHOR_C_INPUT 3
-#define ANCHOR_D_INPUT 4
-
 // *** motor settings ************************************************************************************
 
 #define MOTOR_POWER_MODE            MOTOR_ALWAYS_POWERED  // default motor power mode (see cmMotorPowerMode in stepper.h)
 #define MOTOR_POWER_TIMEOUT         2.00                    // motor power timeout in seconds
 
-#define M1_MOTOR_MAP                AXIS_4WIRE_A
-#define M1_STEP_ANGLE               0.54 // 1.8*(18/60)
-#define M1_TRAVEL_PER_REV           81.6814089933
-#define M1_MICROSTEPS               16
+#define M1_MOTOR_MAP                AXIS_X
+#define M1_STEP_ANGLE               1.80
+#define M1_TRAVEL_PER_REV           40
+#define M1_MICROSTEPS               8
 #define M1_POLARITY                 0
 #define M1_POWER_MODE               MOTOR_POWER_MODE
 #define M1_POWER_LEVEL              0.500
-#define M1_ENCODER_INPUT_A          1
-#define M1_ENCODER_INPUT_B          2
 
-#define M2_MOTOR_MAP                AXIS_4WIRE_B
-#define M2_STEP_ANGLE               0.54
+#define M2_MOTOR_MAP                AXIS_Y
+#define M2_STEP_ANGLE               1.80
 #define M2_TRAVEL_PER_REV           M1_TRAVEL_PER_REV
-#define M2_MICROSTEPS               16
+#define M2_MICROSTEPS               8
 #define M2_POLARITY                 0
 #define M2_POWER_MODE               MOTOR_POWER_MODE
 #define M2_POWER_LEVEL              0.500
-#define M2_ENCODER_INPUT_A          3
-#define M2_ENCODER_INPUT_B          4
 
-#define M3_MOTOR_MAP                AXIS_4WIRE_C
-#define M3_STEP_ANGLE               0.54
+#define M3_MOTOR_MAP                AXIS_Y
+#define M3_STEP_ANGLE               1.80
 #define M3_TRAVEL_PER_REV           M1_TRAVEL_PER_REV
-#define M3_MICROSTEPS               16
+#define M3_MICROSTEPS               8
 #define M3_POLARITY                 0
 #define M3_POWER_MODE               MOTOR_POWER_MODE
 #define M3_POWER_LEVEL              0.500
-#define M3_ENCODER_INPUT_A          5
-#define M3_ENCODER_INPUT_B          6
 
-#define M4_MOTOR_MAP                AXIS_4WIRE_D
-#define M4_STEP_ANGLE               0.54
+#define M4_MOTOR_MAP                AXIS_Y
+#define M4_STEP_ANGLE               1.80
 #define M4_TRAVEL_PER_REV           M1_TRAVEL_PER_REV
-#define M4_MICROSTEPS               16
+#define M4_MICROSTEPS               8
 #define M4_POLARITY                 0
 #define M4_POWER_MODE               MOTOR_POWER_MODE
 #define M4_POWER_LEVEL              0.500
-#define M4_ENCODER_INPUT_A          7
-#define M4_ENCODER_INPUT_B          8
 
-#define M5_MOTOR_MAP                AXIS_4WIRE_Z
-#define M5_STEP_ANGLE               1.6
-#define M5_TRAVEL_PER_REV           8
-#define M5_MICROSTEPS               32
-#define M5_POLARITY                 1
-#define M5_POWER_MODE               MOTOR_POWERED_IN_CYCLE
+#define M5_MOTOR_MAP                AXIS_Z
+#define M5_STEP_ANGLE               1.80
+#define M5_TRAVEL_PER_REV           M1_TRAVEL_PER_REV
+#define M5_MICROSTEPS               8
+#define M5_POLARITY                 0
+#define M5_POWER_MODE               MOTOR_POWER_MODE
 #define M5_POWER_LEVEL              0.500
 
 // *** axis settings **********************************************************************************
@@ -160,11 +114,11 @@
 #define JERK_MAX                    5000
 
 #define X_AXIS_MODE                 AXIS_STANDARD           // xam  see canonical_machine.h cmAxisMode for valid values
-#define X_VELOCITY_MAX              3000                    // xvm  G0 max velocity in mm/min
-#define X_FEEDRATE_MAX              20000                   // xfr  G1 max feed rate in mm/min
+#define X_VELOCITY_MAX              17000                   // xvm  G0 max velocity in mm/min
+#define X_FEEDRATE_MAX              17000                   // xfr  G1 max feed rate in mm/min
 #define X_TRAVEL_MIN                0                       // xtn  minimum travel for soft limits
-#define X_TRAVEL_MAX                1370                    // xtm  travel between switches or crashes
-#define X_JERK_MAX                  150                    // xjm  jerk * 1,000,000
+#define X_TRAVEL_MAX                1500                    // xtm  travel between switches or crashes
+#define X_JERK_MAX                  JERK_MAX                // xjm  jerk * 1,000,000
 #define X_JERK_HIGH_SPEED           250000                  // xjh
 #define X_HOMING_INPUT              1                       // xhi  input used for homing or 0 to disable
 #define X_HOMING_DIRECTION          1                       // xhd  0=search moves negative, 1= search moves positive
@@ -188,18 +142,18 @@
 #define Y_ZERO_BACKOFF              X_ZERO_BACKOFF
 
 #define Z_AXIS_MODE                 AXIS_STANDARD
-#define Z_VELOCITY_MAX              1200
-#define Z_FEEDRATE_MAX              Z_VELOCITY_MAX
-#define Z_TRAVEL_MAX                75
-#define Z_TRAVEL_MIN                -15
-#define Z_JERK_MAX                  500
-#define Z_JERK_HIGH_SPEED           1000
-#define Z_HOMING_INPUT              3
-#define Z_HOMING_DIRECTION          1
-#define Z_SEARCH_VELOCITY           (Z_VELOCITY_MAX * 0.66666)
-#define Z_LATCH_VELOCITY            25
-#define Z_LATCH_BACKOFF             4
-#define Z_ZERO_BACKOFF              2
+#define Z_VELOCITY_MAX              X_VELOCITY_MAX
+#define Z_FEEDRATE_MAX              X_FEEDRATE_MAX
+#define Z_TRAVEL_MIN                X_TRAVEL_MIN
+#define Z_TRAVEL_MAX                X_TRAVEL_MAX
+#define Z_JERK_HIGH_SPEED           X_JERK_HIGH_SPEED
+#define Z_JERK_MAX                  X_JERK_MAX
+#define Z_HOMING_INPUT              X_HOMING_INPUT
+#define Z_HOMING_DIRECTION          X_HOMING_DIRECTION
+#define Z_SEARCH_VELOCITY           X_SEARCH_VELOCITY
+#define Z_LATCH_VELOCITY            X_LATCH_VELOCITY
+#define Z_LATCH_BACKOFF             X_LATCH_BACKOFF
+#define Z_ZERO_BACKOFF              X_ZERO_BACKOFF
 
 //*** Input / output settings ***
 /*

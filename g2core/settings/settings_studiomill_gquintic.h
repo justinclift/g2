@@ -101,8 +101,8 @@
 #define X_TRAVEL_MAX                165.0                   // {xtm:  travel between switches or crashes
 #define X_JERK_MAX                  500.0                   // {xjm:
 #define X_JERK_HIGH_SPEED           500.0                   // {xjh:
-#define X_HOMING_INPUT              1                       // {xhi:  input used for homing or 0 to disable
-#define X_HOMING_DIRECTION          1                       // {xhd:  0=search moves negative, 1= search moves positive
+#define X_HOMING_INPUT              2                       // {xhi:  input used for homing or 0 to disable
+#define X_HOMING_DIRECTION          0                       // {xhd:  0=search moves negative, 1= search moves positive
 #define X_SEARCH_VELOCITY           250.0                   // {xsv:  minus means move to minimum switch
 #define X_LATCH_VELOCITY            150.0                   // {xlv:  mm/min
 #define X_LATCH_BACKOFF             5.0                     // {xlb:  mm
@@ -157,13 +157,13 @@
 
 // * Switches *
 
-// Xmin
+// Xmax
 #define DI1_ENABLED                 IO_ENABLED
 #define DI1_POLARITY                NORMALLY_CLOSED
 #define DI1_ACTION                  INPUT_ACTION_STOP
 #define DI1_EXTERNAL_NUMBER         1
 
-// Xmax
+// Xmin
 #define DI2_ENABLED                 IO_ENABLED
 #define DI2_POLARITY                NORMALLY_CLOSED
 #define DI2_ACTION                  INPUT_ACTION_STOP

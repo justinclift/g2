@@ -264,5 +264,14 @@ ifeq ("$(CONFIG)","fourcable")
     SETTINGS_FILE="settings_fourcable.h"
 endif
 
+##########
+# Studiomill configs:
+ifeq ("$(CONFIG)","studiomill")
+    ifeq ("$(BOARD)","NONE")
+        BOARD=gquintic-d
+    endif
+    SETTINGS_FILE="settings_studiomill_gquintic.h"
+endif
+
 include $(wildcard ./board/$(STAR).mk)
 

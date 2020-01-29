@@ -222,7 +222,7 @@
 
 // MOTOR 1
 #ifndef M1_MOTOR_MAP
-#define M1_MOTOR_MAP                AXIS_X_EXTERNAL         // {1ma: AXIS_X, AXIS_Y...
+#define M1_MOTOR_MAP                AXIS_X         // {1ma: AXIS_X, AXIS_Y...
 #endif
 #ifndef M1_STEP_ANGLE
 #define M1_STEP_ANGLE               1.8                     // {1sa: degrees per step
@@ -231,7 +231,7 @@
 #define M1_TRAVEL_PER_REV           1.25                    // {1tr:  1.25 is a typical value for a screw axis
 #endif
 #ifndef M1_MICROSTEPS
-#define M1_MICROSTEPS               8                       // {1mi:  1,2,4,8,    16,32 (G2 ONLY)
+#define M1_MICROSTEPS               1                       // {1mi:  1,2,4,8,    16,32 (G2 ONLY)
 #endif
 #ifndef M1_STEPS_PER_UNIT
 #define M1_STEPS_PER_UNIT           0                       // {1su:  steps to issue per unit of length or degrees of rotation
@@ -254,7 +254,7 @@
 
 // MOTOR 2
 #ifndef M2_MOTOR_MAP
-#define M2_MOTOR_MAP                AXIS_Y_EXTERNAL
+#define M2_MOTOR_MAP                AXIS_Y
 #endif
 #ifndef M2_STEP_ANGLE
 #define M2_STEP_ANGLE               1.8
@@ -286,7 +286,7 @@
 
 // MOTOR 3
 #ifndef M3_MOTOR_MAP
-#define M3_MOTOR_MAP                AXIS_Z_EXTERNAL
+#define M3_MOTOR_MAP                AXIS_Z
 #endif
 #ifndef M3_STEP_ANGLE
 #define M3_STEP_ANGLE               1.8
@@ -318,7 +318,7 @@
 
 // MOTOR 4
 #ifndef M4_MOTOR_MAP
-#define M4_MOTOR_MAP                AXIS_A_EXTERNAL
+#define M4_MOTOR_MAP                AXIS_A
 #endif
 #ifndef M4_STEP_ANGLE
 #define M4_STEP_ANGLE               1.8
@@ -350,7 +350,7 @@
 
 // MOTOR 5
 #ifndef M5_MOTOR_MAP
-#define M5_MOTOR_MAP                AXIS_B_EXTERNAL
+#define M5_MOTOR_MAP                AXIS_B
 #endif
 #ifndef M5_STEP_ANGLE
 #define M5_STEP_ANGLE               1.8
@@ -382,7 +382,7 @@
 
 // MOTOR 6
 #ifndef M6_MOTOR_MAP
-#define M6_MOTOR_MAP                AXIS_C_EXTERNAL
+#define M6_MOTOR_MAP                AXIS_C
 #endif
 #ifndef M6_STEP_ANGLE
 #define M6_STEP_ANGLE               1.8
@@ -418,7 +418,7 @@
 
 // X AXIS
 #ifndef X_AXIS_MODE
-#define X_AXIS_MODE                 AXIS_DISABLED           // {xam:  see canonical_machine.h cmAxisMode for valid values
+#define X_AXIS_MODE                 AXIS_STANDARD           // {xam:  see canonical_machine.h cmAxisMode for valid values
 #endif
 #ifndef X_VELOCITY_MAX
 #define X_VELOCITY_MAX              1000.0                  // {xvm:  G0 max velocity in mm/min
@@ -459,7 +459,7 @@
 
 // Y AXIS
 #ifndef Y_AXIS_MODE
-#define Y_AXIS_MODE                 AXIS_DISABLED
+#define Y_AXIS_MODE                 AXIS_STANDARD
 #endif
 #ifndef Y_VELOCITY_MAX
 #define Y_VELOCITY_MAX              1000.0
@@ -500,7 +500,7 @@
 
 // Z AXIS
 #ifndef Z_AXIS_MODE
-#define Z_AXIS_MODE                 AXIS_DISABLED
+#define Z_AXIS_MODE                 AXIS_STANDARD
 #endif
 #ifndef Z_VELOCITY_MAX
 #define Z_VELOCITY_MAX              1000.0

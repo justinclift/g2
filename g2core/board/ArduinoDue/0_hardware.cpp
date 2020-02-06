@@ -42,6 +42,26 @@
 SafetyManager sm{};
 SafetyManager *safety_manager = &sm;
 
+// Stub in getSysConfig_3
+constexpr cfgSubtableFromStaticArray sys_config_3{};
+const configSubtable * const getSysConfig_3() { return &sys_config_3; }
+
+#include "esc_spindle.h"
+ESCSpindle esc_spindle {SPINDLE_PWM_NUMBER, SPINDLE_ENABLE_OUTPUT_NUMBER, SPINDLE_DIRECTION_OUTPUT_NUMBER, SPINDLE_SPEED_CHANGE_PER_MS};
+
+
+ToolHead *toolhead_for_tool(uint8_t tool) {
+#if !HAS_LASER
+    return &esc_spindle;
+#else
+    if (tool != LASER_TOOL) {
+        return &esc_spindle;
+    } else {
+        return &laser_tool;
+    }
+#endif
+}
+
 
 /*
  * hardware_init() - lowest level hardware init

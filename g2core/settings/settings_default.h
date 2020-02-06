@@ -231,7 +231,7 @@
 #define M1_TRAVEL_PER_REV           1.25                    // {1tr:  1.25 is a typical value for a screw axis
 #endif
 #ifndef M1_MICROSTEPS
-#define M1_MICROSTEPS               1                       // {1mi:  1,2,4,8,    16,32 (G2 ONLY)
+#define M1_MICROSTEPS               8                       // {1mi:  1,2,4,8,    16,32 (G2 ONLY)
 #endif
 #ifndef M1_STEPS_PER_UNIT
 #define M1_STEPS_PER_UNIT           0                       // {1su:  steps to issue per unit of length or degrees of rotation
@@ -246,10 +246,10 @@
 #define M1_STEP_POLARITY            IO_ACTIVE_HIGH          // {1ps:  IO_ACTIVE_LOW or IO_ACTIVE_HIGH
 #endif
 #ifndef M1_POWER_MODE
-#define M1_POWER_MODE               MOTOR_DISABLED          // {1pm:  MOTOR_DISABLED, MOTOR_ALWAYS_POWERED, MOTOR_POWERED_IN_CYCLE, MOTOR_POWERED_ONLY_WHEN_MOVING
+#define M1_POWER_MODE               MOTOR_POWERED_IN_CYCLE  // {1pm:  MOTOR_DISABLED, MOTOR_ALWAYS_POWERED, MOTOR_POWERED_IN_CYCLE, MOTOR_POWERED_ONLY_WHEN_MOVING
 #endif
 #ifndef M1_POWER_LEVEL
-#define M1_POWER_LEVEL              0.0                     // {1pl:   0.0=no power, 1.0=max power
+#define M1_POWER_LEVEL              0.5                     // {1pl:   0.0=no power, 1.0=max power
 #endif
 
 // MOTOR 2
@@ -260,7 +260,7 @@
 #define M2_STEP_ANGLE               1.8
 #endif
 #ifndef M2_TRAVEL_PER_REV
-#define M2_TRAVEL_PER_REV           40.00
+#define M2_TRAVEL_PER_REV           1.25
 #endif
 #ifndef M2_MICROSTEPS
 #define M2_MICROSTEPS               8
@@ -278,10 +278,10 @@
 #define M2_STEP_POLARITY            IO_ACTIVE_HIGH
 #endif
 #ifndef M2_POWER_MODE
-#define M2_POWER_MODE               MOTOR_DISABLED
+#define M2_POWER_MODE               MOTOR_POWERED_IN_CYCLE
 #endif
 #ifndef M2_POWER_LEVEL
-#define M2_POWER_LEVEL              0.0
+#define M2_POWER_LEVEL              0.5
 #endif
 
 // MOTOR 3
@@ -310,10 +310,10 @@
 #define M3_STEP_POLARITY            IO_ACTIVE_HIGH
 #endif
 #ifndef M3_POWER_MODE
-#define M3_POWER_MODE               MOTOR_DISABLED
+#define M3_POWER_MODE               MOTOR_POWERED_IN_CYCLE
 #endif
 #ifndef M3_POWER_LEVEL
-#define M3_POWER_LEVEL              0.0
+#define M3_POWER_LEVEL              0.5
 #endif
 
 // MOTOR 4
@@ -324,7 +324,7 @@
 #define M4_STEP_ANGLE               1.8
 #endif
 #ifndef M4_TRAVEL_PER_REV
-#define M4_TRAVEL_PER_REV           360.0                   // in degrees if rotary axis (ABC)
+#define M4_TRAVEL_PER_REV           1.25
 #endif
 #ifndef M4_MICROSTEPS
 #define M4_MICROSTEPS               8
@@ -342,10 +342,10 @@
 #define M4_STEP_POLARITY            IO_ACTIVE_HIGH
 #endif
 #ifndef M4_POWER_MODE
-#define M4_POWER_MODE               MOTOR_DISABLED
+#define M4_POWER_MODE               MOTOR_POWERED_IN_CYCLE
 #endif
 #ifndef M4_POWER_LEVEL
-#define M4_POWER_LEVEL              0.0
+#define M4_POWER_LEVEL              0.5
 #endif
 
 // MOTOR 5

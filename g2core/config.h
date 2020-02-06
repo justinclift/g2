@@ -26,6 +26,7 @@
  */
 
 #include <g2core.h>
+#include <MotateUtilities.h>
 
 #ifndef CONFIG_H_ONCE
 #define CONFIG_H_ONCE

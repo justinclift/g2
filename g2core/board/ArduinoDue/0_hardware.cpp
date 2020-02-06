@@ -70,7 +70,9 @@ ToolHead *toolhead_for_tool(uint8_t tool) {
 void hardware_init()
 {
     board_hardware_init();
-	return;
+    toolhead_for_tool(0)->init();
+    spindle_set_toolhead(toolhead_for_tool(0));
+    return;
 }
 
 /*

@@ -73,8 +73,8 @@ StepDirStepper<Motate::kSocket4_StepPinNumber,
 //    Motate::kSocket5_Microstep_0PinNumber,
 //    Motate::kSocket5_Microstep_1PinNumber,
 //    Motate::kSocket5_Microstep_2PinNumber,
-//    Motate::kSocket5_VrefPinNumber>
-//  motor_5 {M5_STEP_POLARITY, M5_ENABLE_POLARITY};
+//    Motate::kSocket5_VrefPinNumber> 
+// motor_5 {M5_STEP_POLARITY, M5_ENABLE_POLARITY};
 
 // StepDirStepper<
 //    Motate::kSocket6_StepPinNumber,
@@ -83,8 +83,8 @@ StepDirStepper<Motate::kSocket4_StepPinNumber,
 //    Motate::kSocket6_Microstep_0PinNumber,
 //    Motate::kSocket6_Microstep_1PinNumber,
 //    Motate::kSocket6_Microstep_2PinNumber,
-//    Motate::kSocket6_VrefPinNumber>
-//  motor_6 {M6_STEP_POLARITY, M6_ENABLE_POLARITY};
+//    Motate::kSocket6_VrefPinNumber> 
+// motor_6 {M6_STEP_POLARITY, M6_ENABLE_POLARITY};
 
 Stepper* Motors[MOTORS] = {&motor_1, &motor_2, &motor_3, &motor_4};
 

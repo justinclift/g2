@@ -33,10 +33,14 @@
 #include "controller.h"
 #include "text_parser.h"
 #include "board_xio.h"
+#include "safety_manager.h"
 
 #include "MotateUtilities.h"
 #include "MotateUniqueID.h"
 #include "MotatePower.h"
+
+SafetyManager sm{};
+SafetyManager *safety_manager = &sm;
 
 
 /*
